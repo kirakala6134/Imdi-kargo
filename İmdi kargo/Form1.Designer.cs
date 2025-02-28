@@ -36,14 +36,14 @@
             this.txtUyeEmail = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtAdminName = new System.Windows.Forms.TextBox();
             this.btnAdminGiris = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtAdminParola = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnNoArat = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtSorgu = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnMaliyet = new System.Windows.Forms.Button();
             this.btnSure = new System.Windows.Forms.Button();
@@ -59,8 +59,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtAdSoyad = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtKayıtTekrarEmail = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtKayıtEmail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -157,25 +155,25 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.txtAdminName);
             this.groupBox2.Controls.Add(this.btnAdminGiris);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.txtAdminParola);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(962, 12);
+            this.groupBox2.Location = new System.Drawing.Point(946, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(350, 224);
+            this.groupBox2.Size = new System.Drawing.Size(366, 224);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Admin giris";
             // 
-            // textBox4
+            // txtAdminName
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox4.Location = new System.Drawing.Point(112, 21);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(199, 34);
-            this.textBox4.TabIndex = 13;
+            this.txtAdminName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtAdminName.Location = new System.Drawing.Point(146, 20);
+            this.txtAdminName.Name = "txtAdminName";
+            this.txtAdminName.Size = new System.Drawing.Size(199, 34);
+            this.txtAdminName.TabIndex = 13;
             // 
             // btnAdminGiris
             // 
@@ -185,25 +183,26 @@
             this.btnAdminGiris.TabIndex = 16;
             this.btnAdminGiris.Text = "Giris";
             this.btnAdminGiris.UseVisualStyleBackColor = true;
+            this.btnAdminGiris.Click += new System.EventHandler(this.btnAdminGiris_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(32, 21);
+            this.label4.Location = new System.Drawing.Point(-5, 23);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 29);
+            this.label4.Size = new System.Drawing.Size(145, 29);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Email";
+            this.label4.Text = "Kullanıcı Adı";
             // 
-            // textBox3
+            // txtAdminParola
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox3.Location = new System.Drawing.Point(121, 72);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(199, 34);
-            this.textBox3.TabIndex = 15;
+            this.txtAdminParola.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtAdminParola.Location = new System.Drawing.Point(121, 72);
+            this.txtAdminParola.Name = "txtAdminParola";
+            this.txtAdminParola.Size = new System.Drawing.Size(199, 34);
+            this.txtAdminParola.TabIndex = 15;
             // 
             // label3
             // 
@@ -220,7 +219,7 @@
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.btnNoArat);
-            this.groupBox3.Controls.Add(this.textBox5);
+            this.groupBox3.Controls.Add(this.txtSorgu);
             this.groupBox3.Location = new System.Drawing.Point(377, 21);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(563, 127);
@@ -237,13 +236,13 @@
             this.btnNoArat.Text = "Arat";
             this.btnNoArat.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // txtSorgu
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox5.Location = new System.Drawing.Point(6, 26);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(419, 30);
-            this.textBox5.TabIndex = 0;
+            this.txtSorgu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtSorgu.Location = new System.Drawing.Point(6, 26);
+            this.txtSorgu.Name = "txtSorgu";
+            this.txtSorgu.Size = new System.Drawing.Size(419, 30);
+            this.txtSorgu.TabIndex = 0;
             // 
             // groupBox4
             // 
@@ -291,8 +290,6 @@
             this.groupBox5.Controls.Add(this.label8);
             this.groupBox5.Controls.Add(this.txtAdSoyad);
             this.groupBox5.Controls.Add(this.label7);
-            this.groupBox5.Controls.Add(this.txtKayıtTekrarEmail);
-            this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Controls.Add(this.txtKayıtEmail);
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Location = new System.Drawing.Point(16, 237);
@@ -305,9 +302,9 @@
             // 
             // btnUyeKaydol
             // 
-            this.btnUyeKaydol.Location = new System.Drawing.Point(21, 367);
+            this.btnUyeKaydol.Location = new System.Drawing.Point(21, 346);
             this.btnUyeKaydol.Name = "btnUyeKaydol";
-            this.btnUyeKaydol.Size = new System.Drawing.Size(325, 56);
+            this.btnUyeKaydol.Size = new System.Drawing.Size(325, 77);
             this.btnUyeKaydol.TabIndex = 12;
             this.btnUyeKaydol.Text = "üyeliği tamamla";
             this.btnUyeKaydol.UseVisualStyleBackColor = true;
@@ -316,7 +313,7 @@
             // txtKayıtParolaTekrar
             // 
             this.txtKayıtParolaTekrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtKayıtParolaTekrar.Location = new System.Drawing.Point(155, 329);
+            this.txtKayıtParolaTekrar.Location = new System.Drawing.Point(161, 297);
             this.txtKayıtParolaTekrar.Name = "txtKayıtParolaTekrar";
             this.txtKayıtParolaTekrar.PasswordChar = '*';
             this.txtKayıtParolaTekrar.Size = new System.Drawing.Size(199, 34);
@@ -327,7 +324,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label11.Location = new System.Drawing.Point(-2, 329);
+            this.label11.Location = new System.Drawing.Point(1, 297);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(160, 29);
             this.label11.TabIndex = 22;
@@ -336,7 +333,7 @@
             // txtKayıtParola
             // 
             this.txtKayıtParola.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtKayıtParola.Location = new System.Drawing.Point(87, 272);
+            this.txtKayıtParola.Location = new System.Drawing.Point(112, 244);
             this.txtKayıtParola.Name = "txtKayıtParola";
             this.txtKayıtParola.PasswordChar = '*';
             this.txtKayıtParola.Size = new System.Drawing.Size(199, 34);
@@ -347,7 +344,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.Location = new System.Drawing.Point(7, 272);
+            this.label10.Location = new System.Drawing.Point(6, 244);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(83, 29);
             this.label10.TabIndex = 12;
@@ -356,7 +353,7 @@
             // txtDogumYili
             // 
             this.txtDogumYili.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtDogumYili.Location = new System.Drawing.Point(126, 223);
+            this.txtDogumYili.Location = new System.Drawing.Point(132, 191);
             this.txtDogumYili.Name = "txtDogumYili";
             this.txtDogumYili.Size = new System.Drawing.Size(222, 34);
             this.txtDogumYili.TabIndex = 21;
@@ -366,7 +363,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label9.Location = new System.Drawing.Point(7, 223);
+            this.label9.Location = new System.Drawing.Point(6, 191);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(126, 29);
             this.label9.TabIndex = 20;
@@ -375,7 +372,7 @@
             // txtTcNo
             // 
             this.txtTcNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtTcNo.Location = new System.Drawing.Point(58, 173);
+            this.txtTcNo.Location = new System.Drawing.Point(74, 137);
             this.txtTcNo.Name = "txtTcNo";
             this.txtTcNo.Size = new System.Drawing.Size(280, 34);
             this.txtTcNo.TabIndex = 19;
@@ -385,7 +382,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.Location = new System.Drawing.Point(6, 173);
+            this.label8.Location = new System.Drawing.Point(1, 137);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(46, 29);
             this.label8.TabIndex = 18;
@@ -394,7 +391,7 @@
             // txtAdSoyad
             // 
             this.txtAdSoyad.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAdSoyad.Location = new System.Drawing.Point(147, 122);
+            this.txtAdSoyad.Location = new System.Drawing.Point(147, 82);
             this.txtAdSoyad.Name = "txtAdSoyad";
             this.txtAdSoyad.Size = new System.Drawing.Size(191, 34);
             this.txtAdSoyad.TabIndex = 17;
@@ -404,30 +401,11 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(7, 122);
+            this.label7.Location = new System.Drawing.Point(1, 82);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(134, 29);
             this.label7.TabIndex = 16;
             this.label7.Text = "AD SOYAD";
-            // 
-            // txtKayıtTekrarEmail
-            // 
-            this.txtKayıtTekrarEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtKayıtTekrarEmail.Location = new System.Drawing.Point(155, 75);
-            this.txtKayıtTekrarEmail.Name = "txtKayıtTekrarEmail";
-            this.txtKayıtTekrarEmail.Size = new System.Drawing.Size(191, 34);
-            this.txtKayıtTekrarEmail.TabIndex = 15;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(7, 78);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(151, 29);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Email Tekrar";
             // 
             // txtKayıtEmail
             // 
@@ -602,13 +580,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtAdminName;
         private System.Windows.Forms.Button btnAdminGiris;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtAdminParola;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnNoArat;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtSorgu;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnMaliyet;
         private System.Windows.Forms.Button btnSure;
@@ -626,8 +604,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtAdSoyad;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtKayıtTekrarEmail;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnHesapla;

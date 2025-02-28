@@ -19,6 +19,8 @@ namespace İmdi_kargo
             { "Trabzon", new List<string> { "Sürmene", "Of", "Araklı"} },
             { "İzmir", new List<string> { "Konak", "Bornova", "Karşıyaka" } }
         };
+        string AdminName = "Admin";
+        string AdminParola = "1234";
         public Form1()
         {
             InitializeComponent();
@@ -39,6 +41,7 @@ namespace İmdi_kargo
 
         private void btnKaydol_Click(object sender, EventArgs e)
         {
+            btnGiris.Enabled = false;
             if (btnKaydol.Enabled)
             {
                 groupBox5.Visible = true;
@@ -88,7 +91,7 @@ namespace İmdi_kargo
 
         private void btnUyeKaydol_Click(object sender, EventArgs e)
         {
-            
+            btnGiris.Enabled = true;
             if (txtKayıtParola.Text == txtKayıtParolaTekrar.Text)
             {
                 MessageBox.Show("üyeliğiniz tamamlandı!");
@@ -143,8 +146,22 @@ namespace İmdi_kargo
             {
                 MessageBox.Show("maliyetiniz:15tl\nKargonuzu alma süreniz tahmini 2 Gün");
             }
+        }
 
-
+        private void btnAdminGiris_Click(object sender, EventArgs e)
+        {
+            Admin admin = new Admin();    
+            if (txtAdminName.Text == AdminName && txtAdminParola.Text == AdminParola)
+            {
+                  MessageBox.Show("Merhaba hoş geldiniz admin");
+                  admin.Show();
+                  this.Hide();  
+            }
+            else
+            {
+                 MessageBox.Show("lütfen tekrar deneyiniz");
+                    
+            }
         }
     }
 }
