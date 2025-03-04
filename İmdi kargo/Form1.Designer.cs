@@ -45,7 +45,6 @@
             this.btnNoArat = new System.Windows.Forms.Button();
             this.txtSorgu = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnMaliyet = new System.Windows.Forms.Button();
             this.btnSure = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btnUyeKaydol = new System.Windows.Forms.Button();
@@ -113,6 +112,7 @@
             this.btnGiris.TabIndex = 10;
             this.btnGiris.Text = "Giris";
             this.btnGiris.UseVisualStyleBackColor = true;
+            this.btnGiris.Click += new System.EventHandler(this.btnGiris_Click);
             // 
             // txtUyeParola
             // 
@@ -247,7 +247,6 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox4.Controls.Add(this.btnMaliyet);
             this.groupBox4.Controls.Add(this.btnSure);
             this.groupBox4.Location = new System.Drawing.Point(376, 154);
             this.groupBox4.Name = "groupBox4";
@@ -256,23 +255,13 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Hizmet türü";
             // 
-            // btnMaliyet
-            // 
-            this.btnMaliyet.Location = new System.Drawing.Point(402, 32);
-            this.btnMaliyet.Name = "btnMaliyet";
-            this.btnMaliyet.Size = new System.Drawing.Size(135, 78);
-            this.btnMaliyet.TabIndex = 13;
-            this.btnMaliyet.Text = "Maliyet";
-            this.btnMaliyet.UseVisualStyleBackColor = true;
-            this.btnMaliyet.Click += new System.EventHandler(this.btnMaliyet_Click);
-            // 
             // btnSure
             // 
-            this.btnSure.Location = new System.Drawing.Point(23, 32);
+            this.btnSure.Location = new System.Drawing.Point(118, 36);
             this.btnSure.Name = "btnSure";
-            this.btnSure.Size = new System.Drawing.Size(135, 78);
+            this.btnSure.Size = new System.Drawing.Size(308, 78);
             this.btnSure.TabIndex = 12;
-            this.btnSure.Text = "süre";
+            this.btnSure.Text = "süre ve maliyet";
             this.btnSure.UseVisualStyleBackColor = true;
             this.btnSure.Click += new System.EventHandler(this.btnSure_Click);
             // 
@@ -569,6 +558,11 @@
 
         }
 
+        private void BtnGiris_Click(object sender, System.EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
@@ -588,7 +582,6 @@
         private System.Windows.Forms.Button btnNoArat;
         private System.Windows.Forms.TextBox txtSorgu;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button btnMaliyet;
         private System.Windows.Forms.Button btnSure;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox txtKayıtEmail;

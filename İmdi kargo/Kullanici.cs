@@ -16,5 +16,10 @@ namespace İmdi_kargo
         {
             InitializeComponent();
         }
+
+        private void Kullanici_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

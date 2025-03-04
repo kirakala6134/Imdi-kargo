@@ -21,6 +21,8 @@ namespace İmdi_kargo
         };
         string AdminName = "Admin";
         string AdminParola = "1234";
+        string UyeMail = "";
+        string UyeParola = "";
         public Form1()
         {
             InitializeComponent();
@@ -32,11 +34,19 @@ namespace İmdi_kargo
             cbAlınacakIlce.SelectedIndexChanged += cbAlınacakIl_SelectedIndexChanged;
         }
 
-       
 
         private void btnGiris_Click(object sender, EventArgs e)
         {
-
+            Kullanici kullanici = new Kullanici();
+            if ((txtUyeEmail.Text == UyeMail) && (txtUyeParola.Text == UyeParola))
+            {
+                MessageBox.Show("girişiniz başarılı!"+txtAdSoyad.Text);
+                kullanici.Show();
+            }
+            else
+            {
+                MessageBox.Show("lütfen tekrar deneyiniz!");
+            }
         }
 
         private void btnKaydol_Click(object sender, EventArgs e)
@@ -50,12 +60,6 @@ namespace İmdi_kargo
         }
 
         private void btnSure_Click(object sender, EventArgs e)
-        {
-            groupBox6.Visible = true;
-            groupBox5.Visible = false;
-        }
-
-        private void btnMaliyet_Click(object sender, EventArgs e)
         {
             groupBox6.Visible = true;
             groupBox5.Visible = false;
@@ -78,13 +82,13 @@ namespace İmdi_kargo
         private void cbAlınacakIl_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbAlınacakIlce.Items.Clear();
-            string secilenSehir1 = cbAlınacakIl.SelectedItem.ToString();
+            string secilenSehir = cbAlınacakIl.SelectedItem.ToString();
 
-            if (sehirler.ContainsKey(secilenSehir1))
+            if (sehirler.ContainsKey(secilenSehir))
             {
-                foreach (string ilce1 in sehirler[secilenSehir1])
+                foreach (string ilce in sehirler[secilenSehir])
                 {
-                    cbAlınacakIlce.Items.Add(ilce1);
+                    cbAlınacakIlce.Items.Add(ilce);
                 }
             }
         }
@@ -92,16 +96,26 @@ namespace İmdi_kargo
         private void btnUyeKaydol_Click(object sender, EventArgs e)
         {
             btnGiris.Enabled = true;
-            if (txtKayıtParola.Text == txtKayıtParolaTekrar.Text)
+            if (txtKayıtEmail.Text != "" && txtAdSoyad.Text != "" && txtTcNo.Text != "" && txtDogumYili.Text != "" && txtKayıtParola.Text != "" && txtKayıtParolaTekrar.Text != "")
             {
-                MessageBox.Show("üyeliğiniz tamamlandı!");
-                groupBox5.Visible = false;
+                if (txtKayıtParola.Text == txtKayıtParolaTekrar.Text)
+                {
+                    MessageBox.Show("üyeliğiniz tamamlandı!");
+                    groupBox5.Visible = false;
+                    UyeMail=txtKayıtEmail.Text;
+                    UyeParola=txtKayıtParola.Text;
+                }
+                else
+                {
+                    MessageBox.Show("şifrenizi kontrol edin");
+
+                }
             }
             else
             {
-                MessageBox.Show("şifrenizi kontrol edin");
-
+                MessageBox.Show("kayıt olamadınız!");
             }
+           
         }
 
         private void btnHesapla_Click(object sender, EventArgs e)
@@ -110,23 +124,23 @@ namespace İmdi_kargo
             {
                 MessageBox.Show("maliyetiniz:20tl\nKargonuzu alma süreniz tahmini 2 Gün");
             }
-            else if ((cbGonderiIL.SelectedIndex == 0 && cbAlınacakIl.SelectedIndex == 1) ||(cbGonderiIL.SelectedIndex == 1 && cbAlınacakIl.SelectedIndex == 0)) 
+            else if((cbGonderiIL.SelectedIndex == 0 && cbAlınacakIl.SelectedIndex == 1) ||(cbGonderiIL.SelectedIndex == 1 && cbAlınacakIl.SelectedIndex == 0)) 
             {
                 MessageBox.Show("maliyetiniz:100tl\nKargonuzu alma süreniz tahmini 7 Gün");
             }
-            else if ((cbGonderiIL.SelectedIndex == 0 && cbAlınacakIl.SelectedIndex == 2) || (cbGonderiIL.SelectedIndex == 2 && cbAlınacakIl.SelectedIndex == 0))
+            else if((cbGonderiIL.SelectedIndex == 0 && cbAlınacakIl.SelectedIndex == 2) || (cbGonderiIL.SelectedIndex == 2 && cbAlınacakIl.SelectedIndex == 0))
             {
                 MessageBox.Show("maliyetiniz:150tl\nKargonuzu alma süreniz tahmini 10 Gün");
             }
-            else if ((cbGonderiIL.SelectedIndex == 0 && cbAlınacakIl.SelectedIndex == 3) || (cbGonderiIL.SelectedIndex == 3 && cbAlınacakIl.SelectedIndex == 0))
+            else if((cbGonderiIL.SelectedIndex == 0 && cbAlınacakIl.SelectedIndex == 3) || (cbGonderiIL.SelectedIndex == 3 && cbAlınacakIl.SelectedIndex == 0))
             {
                 MessageBox.Show("maliyetiniz:80tl\nKargonuzu alma süreniz tahmini 5 Gün");
             }
-            else if ((cbGonderiIL.SelectedIndex == 1 && cbAlınacakIl.SelectedIndex == 1))
+            else if((cbGonderiIL.SelectedIndex == 1 && cbAlınacakIl.SelectedIndex == 1))
             {
                 MessageBox.Show("maliyetiniz:10tl\nKargonuzu alma süreniz tahmini 2 Gün");
             }
-            else if ((cbGonderiIL.SelectedIndex == 1 && cbAlınacakIl.SelectedIndex == 2) || (cbGonderiIL.SelectedIndex == 2 && cbAlınacakIl.SelectedIndex == 1))
+            else if((cbGonderiIL.SelectedIndex == 1 && cbAlınacakIl.SelectedIndex == 2) || (cbGonderiIL.SelectedIndex == 2 && cbAlınacakIl.SelectedIndex == 1))
             {
                 MessageBox.Show("maliyetiniz:100tl\nKargonuzu alma süreniz tahmini 7 Gün");
             }
@@ -134,11 +148,11 @@ namespace İmdi_kargo
             {
                 MessageBox.Show("maliyetiniz:60tl\nKargonuzu alma süreniz tahmini 4 Gün");
             }
-            else if ((cbGonderiIL.SelectedIndex == 2 && cbAlınacakIl.SelectedIndex == 2))
+            else if((cbGonderiIL.SelectedIndex == 2 && cbAlınacakIl.SelectedIndex == 2))
             {
                 MessageBox.Show("maliyetiniz:10tl\nKargonuzu alma süreniz tahmini 1 Gün");
             }
-            else if ((cbGonderiIL.SelectedIndex == 2 && cbAlınacakIl.SelectedIndex == 3) || (cbGonderiIL.SelectedIndex == 3 && cbAlınacakIl.SelectedIndex == 2))
+            else if((cbGonderiIL.SelectedIndex == 2 && cbAlınacakIl.SelectedIndex == 3) || (cbGonderiIL.SelectedIndex == 3 && cbAlınacakIl.SelectedIndex == 2))
             {
                 MessageBox.Show("maliyetiniz:250tl\nKargonuzu alma süreniz tahmini 15 Gün");
             }
