@@ -40,7 +40,7 @@ namespace İmdi_kargo
             Kullanici kullanici = new Kullanici();
             if ((txtUyeEmail.Text == UyeMail) && (txtUyeParola.Text == UyeParola))
             {
-                MessageBox.Show("girişiniz başarılı!"+txtAdSoyad.Text);
+                MessageBox.Show("girişiniz başarılı!");
                 kullanici.Show();
             }
             else
@@ -57,8 +57,8 @@ namespace İmdi_kargo
                 groupBox5.Visible = true;
                 groupBox6.Visible = false;
             }
+          
         }
-
         private void btnSure_Click(object sender, EventArgs e)
         {
             groupBox6.Visible = true;
@@ -95,19 +95,20 @@ namespace İmdi_kargo
 
         private void btnUyeKaydol_Click(object sender, EventArgs e)
         {
-            btnGiris.Enabled = true;
+            
             if (txtKayıtEmail.Text != "" && txtAdSoyad.Text != "" && txtTcNo.Text != "" && txtDogumYili.Text != "" && txtKayıtParola.Text != "" && txtKayıtParolaTekrar.Text != "")
             {
-                if (txtKayıtParola.Text == txtKayıtParolaTekrar.Text)
+                if (txtKayıtParola.Text == txtKayıtParolaTekrar.Text && (txtTcNo.TextLength == 11))
                 {
                     MessageBox.Show("üyeliğiniz tamamlandı!");
                     groupBox5.Visible = false;
                     UyeMail=txtKayıtEmail.Text;
                     UyeParola=txtKayıtParola.Text;
+                    btnGiris.Enabled = true;
                 }
                 else
                 {
-                    MessageBox.Show("şifrenizi kontrol edin");
+                    MessageBox.Show("lütfen tekrar deneyiniz!");
 
                 }
             }
@@ -116,6 +117,7 @@ namespace İmdi_kargo
                 MessageBox.Show("kayıt olamadınız!");
             }
            
+
         }
 
         private void btnHesapla_Click(object sender, EventArgs e)
