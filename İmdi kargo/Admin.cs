@@ -28,5 +28,28 @@ namespace İmdi_kargo
             this.Close();
             form1.Show();
         }
+
+        private void btnKargoDurumGuncelle_Click(object sender, EventArgs e)
+        {
+            groupBox1.Visible = true;
+        }
+
+        private void btnRenkSec_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+
+                Color secilenRenk = colorDialog.Color;
+                this.BackColor = secilenRenk;
+
+            }
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("kargo durumunuz güncellendi!");
+        }
     }
 }

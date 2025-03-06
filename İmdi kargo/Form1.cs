@@ -52,6 +52,9 @@ namespace İmdi_kargo
         private void btnKaydol_Click(object sender, EventArgs e)
         {
             btnGiris.Enabled = false;
+            txtUyeEmail.Enabled = false;
+            txtUyeParola.Enabled = false;
+            dbGonderiSorgu.Visible = false;
             if (btnKaydol.Enabled)
             {
                 groupBox5.Visible = true;
@@ -63,6 +66,7 @@ namespace İmdi_kargo
         {
             groupBox6.Visible = true;
             groupBox5.Visible = false;
+            dbGonderiSorgu.Visible=false;
         }
 
         private void cbGonderiIL_SelectedIndexChanged(object sender, EventArgs e)
@@ -105,6 +109,8 @@ namespace İmdi_kargo
                     UyeMail=txtKayıtEmail.Text;
                     UyeParola=txtKayıtParola.Text;
                     btnGiris.Enabled = true;
+                    txtUyeEmail.Enabled = true;
+                    txtUyeParola.Enabled = true;
                 }
                 else
                 {
@@ -178,6 +184,13 @@ namespace İmdi_kargo
                  MessageBox.Show("lütfen tekrar deneyiniz");
                     
             }
+        }
+
+        private void btnNoArat_Click(object sender, EventArgs e)
+        {
+            dbGonderiSorgu.Show();
+            groupBox5.Visible = false;
+            groupBox6.Visible = false;
         }
     }
 }

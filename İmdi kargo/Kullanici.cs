@@ -56,7 +56,7 @@ namespace İmdi_kargo
 
         private void btnKullaniciBilgiKaydet_Click(object sender, EventArgs e)
         {
-            if ((txtKullaniciAdSoyad.Text != "") && (txtAlicininAdresi.Text != "") && (txtKullaniciDY.Text != "") && (txtKullaniciParola.Text != "") && (txtKullaniciTc.Text != "") && (txtulalniciMail.Text != ""))
+            if ((txtKullaniciAdSoyad.Text != "") || (txtAlicininAdresi.Text != "") || (txtKullaniciDY.Text != "") || (txtKullaniciParola.Text != "") || (txtKullaniciTc.Text != "") || (txtulalniciMail.Text != ""))
             {
                 if (txtKullaniciTc.TextLength == 11)
                 {
@@ -69,7 +69,7 @@ namespace İmdi_kargo
             }
             else
             {
-                MessageBox.Show("lütfen tekrar deneyiniz!");
+                MessageBox.Show("lütfen tekrar deneyniz!");
             }
            
         }

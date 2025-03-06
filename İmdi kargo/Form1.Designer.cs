@@ -70,12 +70,14 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.dbGonderiSorgu = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dbGonderiSorgu)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -235,6 +237,7 @@
             this.btnNoArat.TabIndex = 12;
             this.btnNoArat.Text = "Arat";
             this.btnNoArat.UseVisualStyleBackColor = true;
+            this.btnNoArat.Click += new System.EventHandler(this.btnNoArat_Click);
             // 
             // txtSorgu
             // 
@@ -418,6 +421,7 @@
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox6.Controls.Add(this.dbGonderiSorgu);
             this.groupBox6.Controls.Add(this.btnHesapla);
             this.groupBox6.Controls.Add(this.cbAlınacakIlce);
             this.groupBox6.Controls.Add(this.cbAlınacakIl);
@@ -527,6 +531,17 @@
             this.label12.TabIndex = 24;
             this.label12.Text = "Gönderilecek il";
             // 
+            // dbGonderiSorgu
+            // 
+            this.dbGonderiSorgu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dbGonderiSorgu.Location = new System.Drawing.Point(-365, -100);
+            this.dbGonderiSorgu.Name = "dbGonderiSorgu";
+            this.dbGonderiSorgu.RowHeadersWidth = 51;
+            this.dbGonderiSorgu.RowTemplate.Height = 24;
+            this.dbGonderiSorgu.Size = new System.Drawing.Size(1220, 218);
+            this.dbGonderiSorgu.TabIndex = 12;
+            this.dbGonderiSorgu.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -554,6 +569,7 @@
             this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dbGonderiSorgu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -607,6 +623,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DataGridView dbGonderiSorgu;
     }
 }
 
