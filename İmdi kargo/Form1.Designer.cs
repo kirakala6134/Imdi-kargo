@@ -42,24 +42,26 @@
             this.txtAdminParola = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnKapat = new System.Windows.Forms.Button();
             this.btnNoArat = new System.Windows.Forms.Button();
             this.txtSorgu = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnSure = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.txtDogumYili1 = new System.Windows.Forms.MaskedTextBox();
             this.btnUyeKaydol = new System.Windows.Forms.Button();
             this.txtKayıtParolaTekrar = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtKayıtParola = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.txtTcNo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtAdSoyad = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtKayıtEmail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.dbGonderiSorgu = new System.Windows.Forms.DataGridView();
             this.btnHesapla = new System.Windows.Forms.Button();
             this.cbAlınacakIlce = new System.Windows.Forms.ComboBox();
             this.cbAlınacakIl = new System.Windows.Forms.ComboBox();
@@ -69,9 +71,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtDogumYili1 = new System.Windows.Forms.MaskedTextBox();
-            this.txtTcNo = new System.Windows.Forms.TextBox();
-            this.btnKapat = new System.Windows.Forms.Button();
+            this.dbGonderiSorgu = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -231,6 +231,17 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "gönderi sorgulama";
             // 
+            // btnKapat
+            // 
+            this.btnKapat.Location = new System.Drawing.Point(431, 71);
+            this.btnKapat.Name = "btnKapat";
+            this.btnKapat.Size = new System.Drawing.Size(120, 50);
+            this.btnKapat.TabIndex = 13;
+            this.btnKapat.Text = "Kapat";
+            this.btnKapat.UseVisualStyleBackColor = true;
+            this.btnKapat.Visible = false;
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
+            // 
             // btnNoArat
             // 
             this.btnNoArat.Location = new System.Drawing.Point(431, 18);
@@ -295,6 +306,16 @@
             this.groupBox5.Text = "Kaydol";
             this.groupBox5.Visible = false;
             // 
+            // txtDogumYili1
+            // 
+            this.txtDogumYili1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtDogumYili1.Location = new System.Drawing.Point(125, 191);
+            this.txtDogumYili1.Mask = "00/00/0000";
+            this.txtDogumYili1.Name = "txtDogumYili1";
+            this.txtDogumYili1.Size = new System.Drawing.Size(229, 34);
+            this.txtDogumYili1.TabIndex = 13;
+            this.txtDogumYili1.ValidatingType = typeof(System.DateTime);
+            // 
             // btnUyeKaydol
             // 
             this.btnUyeKaydol.Location = new System.Drawing.Point(21, 346);
@@ -355,6 +376,15 @@
             this.label9.Size = new System.Drawing.Size(126, 29);
             this.label9.TabIndex = 20;
             this.label9.Text = "Doğum yılı";
+            // 
+            // txtTcNo
+            // 
+            this.txtTcNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtTcNo.Location = new System.Drawing.Point(74, 137);
+            this.txtTcNo.Name = "txtTcNo";
+            this.txtTcNo.Size = new System.Drawing.Size(280, 34);
+            this.txtTcNo.TabIndex = 19;
+            this.txtTcNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTcNo_KeyPress);
             // 
             // label8
             // 
@@ -424,17 +454,6 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Hizmet";
             this.groupBox6.Visible = false;
-            // 
-            // dbGonderiSorgu
-            // 
-            this.dbGonderiSorgu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dbGonderiSorgu.Location = new System.Drawing.Point(234, 258);
-            this.dbGonderiSorgu.Name = "dbGonderiSorgu";
-            this.dbGonderiSorgu.RowHeadersWidth = 51;
-            this.dbGonderiSorgu.RowTemplate.Height = 24;
-            this.dbGonderiSorgu.Size = new System.Drawing.Size(912, 137);
-            this.dbGonderiSorgu.TabIndex = 12;
-            this.dbGonderiSorgu.Visible = false;
             // 
             // btnHesapla
             // 
@@ -528,35 +547,16 @@
             this.label12.TabIndex = 24;
             this.label12.Text = "Gönderilecek il";
             // 
-            // txtDogumYili1
+            // dbGonderiSorgu
             // 
-            this.txtDogumYili1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtDogumYili1.Location = new System.Drawing.Point(125, 191);
-            this.txtDogumYili1.Mask = "00/00/0000";
-            this.txtDogumYili1.Name = "txtDogumYili1";
-            this.txtDogumYili1.Size = new System.Drawing.Size(229, 34);
-            this.txtDogumYili1.TabIndex = 13;
-            this.txtDogumYili1.ValidatingType = typeof(System.DateTime);
-            // 
-            // txtTcNo
-            // 
-            this.txtTcNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtTcNo.Location = new System.Drawing.Point(74, 137);
-            this.txtTcNo.Name = "txtTcNo";
-            this.txtTcNo.Size = new System.Drawing.Size(280, 34);
-            this.txtTcNo.TabIndex = 19;
-            this.txtTcNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTcNo_KeyPress);
-            // 
-            // btnKapat
-            // 
-            this.btnKapat.Location = new System.Drawing.Point(431, 71);
-            this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(120, 50);
-            this.btnKapat.TabIndex = 13;
-            this.btnKapat.Text = "Kapat";
-            this.btnKapat.UseVisualStyleBackColor = true;
-            this.btnKapat.Visible = false;
-            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
+            this.dbGonderiSorgu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dbGonderiSorgu.Location = new System.Drawing.Point(157, 262);
+            this.dbGonderiSorgu.Name = "dbGonderiSorgu";
+            this.dbGonderiSorgu.RowHeadersWidth = 51;
+            this.dbGonderiSorgu.RowTemplate.Height = 24;
+            this.dbGonderiSorgu.Size = new System.Drawing.Size(1100, 220);
+            this.dbGonderiSorgu.TabIndex = 13;
+            this.dbGonderiSorgu.Visible = false;
             // 
             // Form1
             // 
@@ -638,10 +638,10 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DataGridView dbGonderiSorgu;
         private System.Windows.Forms.MaskedTextBox txtDogumYili1;
         private System.Windows.Forms.TextBox txtTcNo;
         private System.Windows.Forms.Button btnKapat;
+        private System.Windows.Forms.DataGridView dbGonderiSorgu;
     }
 }
 

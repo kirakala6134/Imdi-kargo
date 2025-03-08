@@ -7,11 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace İmdi_kargo
 {
     public partial class Kullanici : Form
     {
+        MySqlConnection con = new MySqlConnection("server=localhost;Database=imdikargo;Uid=root;pwd=YPpDy2np");
+        MySqlCommand cmd;
+        MySqlDataAdapter adapter;
+        DataTable dt;
         public Kullanici()
         {
             InitializeComponent();
