@@ -153,6 +153,7 @@
             this.cbKargoNo.Name = "cbKargoNo";
             this.cbKargoNo.Size = new System.Drawing.Size(154, 24);
             this.cbKargoNo.TabIndex = 4;
+            this.cbKargoNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbKargoNo_KeyPress);
             // 
             // cbKargoDurum
             // 

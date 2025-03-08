@@ -51,5 +51,10 @@ namespace İmdi_kargo
         {
             MessageBox.Show("kargo durumunuz güncellendi!");
         }
+
+        private void cbKargoNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
     }
 }

@@ -47,6 +47,7 @@ namespace İmdi_kargo
         private void btnKargoDurum_Click(object sender, EventArgs e)
         {
             dbKargomNerdeSorgu.Visible=true;
+            btnKapat.Visible=true;
         }
 
         private void btnKargoYolla_Click(object sender, EventArgs e)
@@ -72,6 +73,22 @@ namespace İmdi_kargo
                 MessageBox.Show("lütfen tekrar deneyniz!");
             }
            
+        }
+
+        private void btnKapat_Click(object sender, EventArgs e)
+        {
+            dbKargomNerdeSorgu.Visible = false;
+            btnKapat.Visible = false;
+        }
+
+        private void txtKargoTakipNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtKullaniciTc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

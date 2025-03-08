@@ -29,8 +29,8 @@ namespace İmdi_kargo
             cbGonderiIL.Items.AddRange(new object[] { "İstanbul", "Ankara", "Trabzon", "İzmir" });
             cbAlınacakIl.Items.AddRange(new object[] { "İstanbul", "Ankara", "Trabzon", "İzmir" });
             cbGonderiIL.SelectedIndexChanged += cbGonderiIL_SelectedIndexChanged;
+            cbGonderiIce.SelectedIndexChanged += cbAlınacakIl_SelectedIndexChanged;
             cbAlınacakIl.SelectedIndexChanged += cbAlınacakIl_SelectedIndexChanged;
-            cbGonderiIlce.SelectedIndexChanged += cbAlınacakIl_SelectedIndexChanged;
             cbAlınacakIlce.SelectedIndexChanged += cbAlınacakIl_SelectedIndexChanged;
         }
 
@@ -71,14 +71,14 @@ namespace İmdi_kargo
 
         private void cbGonderiIL_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cbGonderiIlce.Items.Clear();
+            cbGonderiIce.Items.Clear();
             string secilenSehir = cbGonderiIL.SelectedItem.ToString();
 
             if (sehirler.ContainsKey(secilenSehir))
             {
                 foreach (string ilce in sehirler[secilenSehir])
                 {
-                    cbGonderiIlce.Items.Add(ilce);
+                    cbGonderiIce.Items.Add(ilce);
                 }
             }
         }
@@ -86,11 +86,14 @@ namespace İmdi_kargo
         private void cbAlınacakIl_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbAlınacakIlce.Items.Clear();
-            string secilenSehir = cbAlınacakIl.SelectedItem.ToString();
-
-            if (sehirler.ContainsKey(secilenSehir))
+            if (cbAlınacakIl.SelectedItem == null)
             {
-                foreach (string ilce in sehirler[secilenSehir])
+                return;
+            }
+            string secilenSehir2 = cbAlınacakIl.SelectedItem.ToString();
+            if (sehirler.ContainsKey(secilenSehir2))
+            {
+                foreach (string ilce in sehirler[secilenSehir2])
                 {
                     cbAlınacakIlce.Items.Add(ilce);
                 }
@@ -100,7 +103,7 @@ namespace İmdi_kargo
         private void btnUyeKaydol_Click(object sender, EventArgs e)
         {
             
-            if (txtKayıtEmail.Text != "" && txtAdSoyad.Text != "" && txtTcNo.Text != "" && txtDogumYili.Text != "" && txtKayıtParola.Text != "" && txtKayıtParolaTekrar.Text != "")
+            if (txtKayıtEmail.Text != "" && txtAdSoyad.Text != "" && txtTcNo.Text != "" && txtDogumYili1.Text !="" && txtKayıtParola.Text != "" && txtKayıtParolaTekrar.Text != "")
             {
                 if (txtKayıtParola.Text == txtKayıtParolaTekrar.Text && (txtTcNo.TextLength == 11))
                 {
@@ -188,9 +191,26 @@ namespace İmdi_kargo
 
         private void btnNoArat_Click(object sender, EventArgs e)
         {
-            dbGonderiSorgu.Show();
+            dbGonderiSorgu.Visible = true;
             groupBox5.Visible = false;
             groupBox6.Visible = false;
+            btnKapat.Visible = true;
+        }
+
+        private void btnKapat_Click(object sender, EventArgs e)
+        {
+            dbGonderiSorgu.Visible=false;
+            btnKapat.Visible=false;
+        }
+
+        private void txtTcNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtSorgu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }
