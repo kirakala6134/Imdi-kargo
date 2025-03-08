@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.gbGonderiSor = new System.Windows.Forms.GroupBox();
-            this.dbKargomNerdeSorgu = new System.Windows.Forms.DataGridView();
+            this.btnKapat = new System.Windows.Forms.Button();
             this.btnKargoDurum = new System.Windows.Forms.Button();
             this.txtKargoTakipNo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -59,18 +59,18 @@
             this.btnReturnAnaSayfa = new System.Windows.Forms.Button();
             this.btnRenkSec = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnKapat = new System.Windows.Forms.Button();
+            this.dbKargomNerdeSorgu = new System.Windows.Forms.DataGridView();
             this.gbGonderiSor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dbKargomNerdeSorgu)).BeginInit();
             this.gbKargoYolla.SuspendLayout();
             this.gbBilgiler.SuspendLayout();
             this.gbAyarlar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dbKargomNerdeSorgu)).BeginInit();
             this.SuspendLayout();
             // 
             // gbGonderiSor
             // 
-            this.gbGonderiSor.Controls.Add(this.btnKapat);
             this.gbGonderiSor.Controls.Add(this.dbKargomNerdeSorgu);
+            this.gbGonderiSor.Controls.Add(this.btnKapat);
             this.gbGonderiSor.Controls.Add(this.btnKargoDurum);
             this.gbGonderiSor.Controls.Add(this.txtKargoTakipNo);
             this.gbGonderiSor.Controls.Add(this.label2);
@@ -81,16 +81,16 @@
             this.gbGonderiSor.TabStop = false;
             this.gbGonderiSor.Text = "GonderiSorgula";
             // 
-            // dbKargomNerdeSorgu
+            // btnKapat
             // 
-            this.dbKargomNerdeSorgu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dbKargomNerdeSorgu.Location = new System.Drawing.Point(6, 159);
-            this.dbKargomNerdeSorgu.Name = "dbKargomNerdeSorgu";
-            this.dbKargomNerdeSorgu.RowHeadersWidth = 51;
-            this.dbKargomNerdeSorgu.RowTemplate.Height = 24;
-            this.dbKargomNerdeSorgu.Size = new System.Drawing.Size(354, 293);
-            this.dbKargomNerdeSorgu.TabIndex = 6;
-            this.dbKargomNerdeSorgu.Visible = false;
+            this.btnKapat.Location = new System.Drawing.Point(194, 85);
+            this.btnKapat.Name = "btnKapat";
+            this.btnKapat.Size = new System.Drawing.Size(135, 46);
+            this.btnKapat.TabIndex = 7;
+            this.btnKapat.Text = "Kapat";
+            this.btnKapat.UseVisualStyleBackColor = true;
+            this.btnKapat.Visible = false;
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
             // btnKargoDurum
             // 
@@ -384,16 +384,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Arka plan rengi:";
             // 
-            // btnKapat
+            // dbKargomNerdeSorgu
             // 
-            this.btnKapat.Location = new System.Drawing.Point(194, 85);
-            this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(135, 46);
-            this.btnKapat.TabIndex = 7;
-            this.btnKapat.Text = "Kapat";
-            this.btnKapat.UseVisualStyleBackColor = true;
-            this.btnKapat.Visible = false;
-            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
+            this.dbKargomNerdeSorgu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dbKargomNerdeSorgu.Location = new System.Drawing.Point(11, 182);
+            this.dbKargomNerdeSorgu.Name = "dbKargomNerdeSorgu";
+            this.dbKargomNerdeSorgu.RowHeadersWidth = 51;
+            this.dbKargomNerdeSorgu.RowTemplate.Height = 24;
+            this.dbKargomNerdeSorgu.Size = new System.Drawing.Size(349, 302);
+            this.dbKargomNerdeSorgu.TabIndex = 15;
+            this.dbKargomNerdeSorgu.Visible = false;
             // 
             // Kullanici
             // 
@@ -409,13 +409,13 @@
             this.Load += new System.EventHandler(this.Kullanici_Load);
             this.gbGonderiSor.ResumeLayout(false);
             this.gbGonderiSor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dbKargomNerdeSorgu)).EndInit();
             this.gbKargoYolla.ResumeLayout(false);
             this.gbKargoYolla.PerformLayout();
             this.gbBilgiler.ResumeLayout(false);
             this.gbBilgiler.PerformLayout();
             this.gbAyarlar.ResumeLayout(false);
             this.gbAyarlar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dbKargomNerdeSorgu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -432,7 +432,6 @@
         private System.Windows.Forms.Button btnKargoDurum;
         private System.Windows.Forms.TextBox txtKargoTakipNo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dbKargomNerdeSorgu;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox txtAlicininAdresi;
@@ -454,5 +453,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnKullaniciBilgiKaydet;
         private System.Windows.Forms.Button btnKapat;
+        private System.Windows.Forms.DataGridView dbKargomNerdeSorgu;
     }
 }
