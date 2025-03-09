@@ -85,12 +85,13 @@
             // 
             // btnMüsteriListe
             // 
-            this.btnMüsteriListe.Location = new System.Drawing.Point(738, 0);
+            this.btnMüsteriListe.Location = new System.Drawing.Point(737, 0);
             this.btnMüsteriListe.Name = "btnMüsteriListe";
             this.btnMüsteriListe.Size = new System.Drawing.Size(308, 114);
             this.btnMüsteriListe.TabIndex = 3;
             this.btnMüsteriListe.Text = "Müsteri Listesi";
             this.btnMüsteriListe.UseVisualStyleBackColor = true;
+            this.btnMüsteriListe.Click += new System.EventHandler(this.btnMüsteriListe_Click);
             // 
             // btnKargoListe
             // 
@@ -100,6 +101,7 @@
             this.btnKargoListe.TabIndex = 2;
             this.btnKargoListe.Text = "Kargo Listesi";
             this.btnKargoListe.UseVisualStyleBackColor = true;
+            this.btnKargoListe.Click += new System.EventHandler(this.btnKargoListe_Click);
             // 
             // btnKargoDurumGuncelle
             // 

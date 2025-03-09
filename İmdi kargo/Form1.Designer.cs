@@ -550,13 +550,14 @@
             // dbGonderiSorgu
             // 
             this.dbGonderiSorgu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dbGonderiSorgu.Location = new System.Drawing.Point(157, 262);
+            this.dbGonderiSorgu.Location = new System.Drawing.Point(162, 262);
             this.dbGonderiSorgu.Name = "dbGonderiSorgu";
             this.dbGonderiSorgu.RowHeadersWidth = 51;
             this.dbGonderiSorgu.RowTemplate.Height = 24;
             this.dbGonderiSorgu.Size = new System.Drawing.Size(1100, 220);
             this.dbGonderiSorgu.TabIndex = 13;
             this.dbGonderiSorgu.Visible = false;
+            this.dbGonderiSorgu.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dbGonderiSorgu_CellEnter);
             // 
             // Form1
             // 

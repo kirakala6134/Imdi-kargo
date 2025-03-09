@@ -27,8 +27,8 @@ namespace İmdi_kargo
         };
         string AdminName = "Admin";
         string AdminParola = "1234";
-        string UyeMail = "";
-        string UyeParola = "";
+        string UyeMail = "@email";
+        string UyeParola = "@Parola";
         public Form1()
         {
             InitializeComponent();
@@ -113,6 +113,39 @@ namespace İmdi_kargo
             {
                 if (txtKayıtParola.Text == txtKayıtParolaTekrar.Text && (txtTcNo.TextLength == 11))
                 {
+                    using (MySqlConnection con = new MySqlConnection("server=localhost;Database=imdikargo;Uid=root;pwd=YPpDy2np"))
+                    {
+                        try
+                        {
+                            con.Open();
+                            string query = "INSERT INTO musteri (Musteri_No,Musteri_AdSoyad, Musteri_Email, Musteri_TC, Musteri_DogumYili, Musteri_Parola) VALUES (@MusteriNo, @adSoyad, @Email, @TC, @DogumYili, @Parola)";
+                            using (MySqlCommand cmd = new MySqlCommand(query, con))
+                            {
+                                cmd.Parameters.AddWithValue("@MusteriNo",61);
+                                cmd.Parameters.AddWithValue("@adSoyad", txtAdSoyad.Text);
+                                cmd.Parameters.AddWithValue("@Email", txtKayıtEmail.Text);
+                                cmd.Parameters.AddWithValue("@TC", txtTcNo.Text);
+                                cmd.Parameters.AddWithValue("@DogumYili", txtDogumYili1.Text);
+                                cmd.Parameters.AddWithValue("@Parola", txtKayıtParola.Text);
+
+                                int rowsAffected = cmd.ExecuteNonQuery();
+
+                                if (rowsAffected > 0)
+                                {
+                                    MessageBox.Show("Kayıt başarılı!");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Kayıt eklenemedi.");
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Hata: " + ex.Message);
+                        }
+                    }
+
                     MessageBox.Show("üyeliğiniz tamamlandı!");
                     groupBox5.Visible = false;
                     UyeMail=txtKayıtEmail.Text;
@@ -131,10 +164,7 @@ namespace İmdi_kargo
             {
                 MessageBox.Show("kayıt olamadınız!");
             }
-           
-
         }
-
         private void btnHesapla_Click(object sender, EventArgs e)
         {
             if ((cbGonderiIL.SelectedIndex == 0 && cbAlınacakIl.SelectedIndex == 0))
@@ -201,6 +231,28 @@ namespace İmdi_kargo
             groupBox5.Visible = false;
             groupBox6.Visible = false;
             btnKapat.Visible = true;
+            if (txtSorgu.Text == "")
+            {
+                MessageBox.Show("lütfen tekrar deneyiniz!");
+            }
+            string takipNo = txtSorgu.Text;
+            using (MySqlConnection con = new MySqlConnection("server=localhost;Database=imdikargo;Uid=root;pwd=YPpDy2np"))
+            {
+                con.Open();
+                string query = "SELECT * FROM kargo WHERE Takip_no = @TakipNo";
+                using (MySqlCommand cmd = new MySqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@TakipNo", takipNo);
+
+                    using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        dbGonderiSorgu.DataSource = dt;
+                    }
+                }
+
+            }
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
@@ -217,6 +269,11 @@ namespace İmdi_kargo
         private void txtSorgu_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void dbGonderiSorgu_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }

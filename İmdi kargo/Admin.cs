@@ -54,12 +54,73 @@ namespace İmdi_kargo
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("kargo durumunuz güncellendi!");
+            if (cbKargoNo.SelectedItem == "" || cbKargoDurum.SelectedItem == null)
+            {
+                MessageBox.Show("Lütfen tekrar deneyin");
+                return;
+            }
+            string takipNo = cbKargoNo.Text;
+            string yeniDurum = cbKargoDurum.SelectedItem.ToString();
+            using (MySqlConnection con = new MySqlConnection("server=localhost;Database=imdikargo;Uid=root;pwd=YPpDy2np"))
+            {
+                con.Open();
+                string query = "UPDATE kargo SET Kargo_durum = @Durum WHERE Takip_no = @TakipNo";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@Durum", yeniDurum);
+                    cmd.Parameters.AddWithValue("@TakipNo", takipNo);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("kargo durumunuz güncellendi!");
+                        dataGridView1.Refresh();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Güncellenecek kargo bulunamadı!");
+                    }
+                }
+            }
         }
 
         private void cbKargoNo_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void btnKargoListe_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection con = new MySqlConnection("server=localhost;Database=imdikargo;Uid=root;pwd=YPpDy2np"))
+            {
+                con.Open();
+                string query = "SELECT * FROM kargo"; 
+
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, con))
+                {
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                }
+            }
+        }
+
+        private void btnMüsteriListe_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection con = new MySqlConnection("server=localhost;Database=imdikargo;Uid=root;pwd=YPpDy2np"))
+            {
+                con.Open();
+                string query = "SELECT * FROM musteri";
+
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, con))
+                {
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                }
+            }
         }
     }
 }
