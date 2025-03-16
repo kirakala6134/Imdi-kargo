@@ -44,6 +44,8 @@
             this.gbAyarlar = new System.Windows.Forms.GroupBox();
             this.btnRenkSec = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.mbtKargoTeslimTarih = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -116,7 +118,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-3, 192);
+            this.dataGridView1.Location = new System.Drawing.Point(-3, 173);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -125,14 +127,16 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.mbtKargoTeslimTarih);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.btnGuncelle);
             this.groupBox1.Controls.Add(this.cbKargoNo);
             this.groupBox1.Controls.Add(this.cbKargoDurum);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(13, 435);
+            this.groupBox1.Location = new System.Drawing.Point(13, 415);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(420, 240);
+            this.groupBox1.Size = new System.Drawing.Size(420, 276);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kargo Durumu Güncelle";
@@ -140,7 +144,7 @@
             // 
             // btnGuncelle
             // 
-            this.btnGuncelle.Location = new System.Drawing.Point(12, 158);
+            this.btnGuncelle.Location = new System.Drawing.Point(12, 211);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(311, 59);
             this.btnGuncelle.TabIndex = 5;
@@ -175,9 +179,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.Location = new System.Drawing.Point(7, 101);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 25);
+            this.label2.Size = new System.Drawing.Size(145, 25);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Kargo Durumu";
+            this.label2.Text = "Kargo Durumu:";
             // 
             // label1
             // 
@@ -220,6 +224,25 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Arka plan rengi:";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(7, 145);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(184, 25);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Kargo Teslim Tarih:";
+            // 
+            // mbtKargoTeslimTarih
+            // 
+            this.mbtKargoTeslimTarih.Location = new System.Drawing.Point(198, 145);
+            this.mbtKargoTeslimTarih.Mask = "00/00/0000";
+            this.mbtKargoTeslimTarih.Name = "mbtKargoTeslimTarih";
+            this.mbtKargoTeslimTarih.Size = new System.Drawing.Size(100, 22);
+            this.mbtKargoTeslimTarih.TabIndex = 7;
+            this.mbtKargoTeslimTarih.ValidatingType = typeof(System.DateTime);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -261,5 +284,7 @@
         private System.Windows.Forms.GroupBox gbAyarlar;
         private System.Windows.Forms.Button btnRenkSec;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.MaskedTextBox mbtKargoTeslimTarih;
+        private System.Windows.Forms.Label label4;
     }
 }

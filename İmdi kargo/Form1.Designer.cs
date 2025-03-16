@@ -72,6 +72,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.dbGonderiSorgu = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -559,6 +561,27 @@
             this.dbGonderiSorgu.Visible = false;
             this.dbGonderiSorgu.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dbGonderiSorgu_CellEnter);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.Location = new System.Drawing.Point(20, 689);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(425, 25);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Not: Admin giriş kullanıcı adı:Admin parola:1234";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label16.Location = new System.Drawing.Point(15, 723);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(787, 25);
+            this.label16.TabIndex = 25;
+            this.label16.Text = "Tarih girerken yılın sadece son iki rakamını giriniz mesela 25.08.2008 değilde 25" +
+    ".08.08 gibi";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -566,7 +589,9 @@
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImage = global::İmdi_kargo.Properties.Resources.İmdi;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1324, 683);
+            this.ClientSize = new System.Drawing.Size(1324, 757);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.dbGonderiSorgu);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
@@ -589,6 +614,7 @@
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbGonderiSorgu)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -643,6 +669,8 @@
         private System.Windows.Forms.TextBox txtTcNo;
         private System.Windows.Forms.Button btnKapat;
         private System.Windows.Forms.DataGridView dbGonderiSorgu;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label16;
     }
 }
 

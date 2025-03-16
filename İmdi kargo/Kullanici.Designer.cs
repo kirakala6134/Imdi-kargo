@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbGonderiSor = new System.Windows.Forms.GroupBox();
+            this.dbKargomNerdeSorgu = new System.Windows.Forms.DataGridView();
             this.btnKapat = new System.Windows.Forms.Button();
             this.btnKargoDurum = new System.Windows.Forms.Button();
             this.txtKargoTakipNo = new System.Windows.Forms.TextBox();
@@ -59,12 +60,13 @@
             this.btnReturnAnaSayfa = new System.Windows.Forms.Button();
             this.btnRenkSec = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.dbKargomNerdeSorgu = new System.Windows.Forms.DataGridView();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtKullanici_MusteriNo = new System.Windows.Forms.TextBox();
             this.gbGonderiSor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dbKargomNerdeSorgu)).BeginInit();
             this.gbKargoYolla.SuspendLayout();
             this.gbBilgiler.SuspendLayout();
             this.gbAyarlar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dbKargomNerdeSorgu)).BeginInit();
             this.SuspendLayout();
             // 
             // gbGonderiSor
@@ -80,6 +82,17 @@
             this.gbGonderiSor.TabIndex = 0;
             this.gbGonderiSor.TabStop = false;
             this.gbGonderiSor.Text = "GonderiSorgula";
+            // 
+            // dbKargomNerdeSorgu
+            // 
+            this.dbKargomNerdeSorgu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dbKargomNerdeSorgu.Location = new System.Drawing.Point(11, 182);
+            this.dbKargomNerdeSorgu.Name = "dbKargomNerdeSorgu";
+            this.dbKargomNerdeSorgu.RowHeadersWidth = 51;
+            this.dbKargomNerdeSorgu.RowTemplate.Height = 24;
+            this.dbKargomNerdeSorgu.Size = new System.Drawing.Size(349, 302);
+            this.dbKargomNerdeSorgu.TabIndex = 15;
+            this.dbKargomNerdeSorgu.Visible = false;
             // 
             // btnKapat
             // 
@@ -158,6 +171,10 @@
             // cbOdemeTipi
             // 
             this.cbOdemeTipi.FormattingEnabled = true;
+            this.cbOdemeTipi.Items.AddRange(new object[] {
+            "Nakit",
+            "Kart",
+            "başka yollar(abonelik vb...)"});
             this.cbOdemeTipi.Location = new System.Drawing.Point(154, 182);
             this.cbOdemeTipi.Name = "cbOdemeTipi";
             this.cbOdemeTipi.Size = new System.Drawing.Size(137, 24);
@@ -166,6 +183,11 @@
             // cbTeslimTipi
             // 
             this.cbTeslimTipi.FormattingEnabled = true;
+            this.cbTeslimTipi.Items.AddRange(new object[] {
+            "Elden",
+            "Bayiden",
+            "İş yerinden",
+            "Diğer"});
             this.cbTeslimTipi.Location = new System.Drawing.Point(125, 39);
             this.cbTeslimTipi.Name = "cbTeslimTipi";
             this.cbTeslimTipi.Size = new System.Drawing.Size(137, 24);
@@ -223,6 +245,8 @@
             // 
             // gbBilgiler
             // 
+            this.gbBilgiler.Controls.Add(this.txtKullanici_MusteriNo);
+            this.gbBilgiler.Controls.Add(this.label12);
             this.gbBilgiler.Controls.Add(this.btnKullaniciBilgiKaydet);
             this.gbBilgiler.Controls.Add(this.txtKullaniciParola);
             this.gbBilgiler.Controls.Add(this.txtulalniciMail);
@@ -262,7 +286,7 @@
             // txtulalniciMail
             // 
             this.txtulalniciMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtulalniciMail.Location = new System.Drawing.Point(113, 238);
+            this.txtulalniciMail.Location = new System.Drawing.Point(113, 265);
             this.txtulalniciMail.Name = "txtulalniciMail";
             this.txtulalniciMail.Size = new System.Drawing.Size(195, 30);
             this.txtulalniciMail.TabIndex = 23;
@@ -270,7 +294,7 @@
             // txtKullaniciDY
             // 
             this.txtKullaniciDY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtKullaniciDY.Location = new System.Drawing.Point(113, 159);
+            this.txtKullaniciDY.Location = new System.Drawing.Point(113, 214);
             this.txtKullaniciDY.Name = "txtKullaniciDY";
             this.txtKullaniciDY.Size = new System.Drawing.Size(195, 30);
             this.txtKullaniciDY.TabIndex = 22;
@@ -278,7 +302,7 @@
             // txtKullaniciTc
             // 
             this.txtKullaniciTc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtKullaniciTc.Location = new System.Drawing.Point(113, 93);
+            this.txtKullaniciTc.Location = new System.Drawing.Point(113, 98);
             this.txtKullaniciTc.Name = "txtKullaniciTc";
             this.txtKullaniciTc.Size = new System.Drawing.Size(195, 30);
             this.txtKullaniciTc.TabIndex = 21;
@@ -287,7 +311,7 @@
             // txtKullaniciAdSoyad
             // 
             this.txtKullaniciAdSoyad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtKullaniciAdSoyad.Location = new System.Drawing.Point(113, 32);
+            this.txtKullaniciAdSoyad.Location = new System.Drawing.Point(113, 158);
             this.txtKullaniciAdSoyad.Name = "txtKullaniciAdSoyad";
             this.txtKullaniciAdSoyad.Size = new System.Drawing.Size(195, 30);
             this.txtKullaniciAdSoyad.TabIndex = 20;
@@ -306,7 +330,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.Location = new System.Drawing.Point(7, 243);
+            this.label10.Location = new System.Drawing.Point(7, 270);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(66, 25);
             this.label10.TabIndex = 18;
@@ -316,7 +340,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label9.Location = new System.Drawing.Point(6, 159);
+            this.label9.Location = new System.Drawing.Point(7, 217);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(111, 25);
             this.label9.TabIndex = 17;
@@ -326,7 +350,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.Location = new System.Drawing.Point(6, 93);
+            this.label8.Location = new System.Drawing.Point(7, 106);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(46, 25);
             this.label8.TabIndex = 16;
@@ -336,7 +360,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(7, 35);
+            this.label7.Location = new System.Drawing.Point(7, 163);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 25);
             this.label7.TabIndex = 15;
@@ -384,16 +408,23 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Arka plan rengi:";
             // 
-            // dbKargomNerdeSorgu
+            // label12
             // 
-            this.dbKargomNerdeSorgu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dbKargomNerdeSorgu.Location = new System.Drawing.Point(11, 182);
-            this.dbKargomNerdeSorgu.Name = "dbKargomNerdeSorgu";
-            this.dbKargomNerdeSorgu.RowHeadersWidth = 51;
-            this.dbKargomNerdeSorgu.RowTemplate.Height = 24;
-            this.dbKargomNerdeSorgu.Size = new System.Drawing.Size(349, 302);
-            this.dbKargomNerdeSorgu.TabIndex = 15;
-            this.dbKargomNerdeSorgu.Visible = false;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label12.Location = new System.Drawing.Point(0, 40);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(112, 25);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "Musteri No:";
+            // 
+            // txtKullanici_MusteriNo
+            // 
+            this.txtKullanici_MusteriNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtKullanici_MusteriNo.Location = new System.Drawing.Point(113, 34);
+            this.txtKullanici_MusteriNo.Name = "txtKullanici_MusteriNo";
+            this.txtKullanici_MusteriNo.Size = new System.Drawing.Size(195, 30);
+            this.txtKullanici_MusteriNo.TabIndex = 26;
             // 
             // Kullanici
             // 
@@ -409,13 +440,13 @@
             this.Load += new System.EventHandler(this.Kullanici_Load);
             this.gbGonderiSor.ResumeLayout(false);
             this.gbGonderiSor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dbKargomNerdeSorgu)).EndInit();
             this.gbKargoYolla.ResumeLayout(false);
             this.gbKargoYolla.PerformLayout();
             this.gbBilgiler.ResumeLayout(false);
             this.gbBilgiler.PerformLayout();
             this.gbAyarlar.ResumeLayout(false);
             this.gbAyarlar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dbKargomNerdeSorgu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -454,5 +485,7 @@
         private System.Windows.Forms.Button btnKullaniciBilgiKaydet;
         private System.Windows.Forms.Button btnKapat;
         private System.Windows.Forms.DataGridView dbKargomNerdeSorgu;
+        private System.Windows.Forms.TextBox txtKullanici_MusteriNo;
+        private System.Windows.Forms.Label label12;
     }
 }

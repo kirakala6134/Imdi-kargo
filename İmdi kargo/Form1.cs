@@ -29,6 +29,9 @@ namespace İmdi_kargo
         string AdminParola = "1234";
         string UyeMail = "@email";
         string UyeParola = "@Parola";
+        Random rnd = new Random();
+        int Uye_No;
+        
         public Form1()
         {
             InitializeComponent();
@@ -44,15 +47,27 @@ namespace İmdi_kargo
         private void btnGiris_Click(object sender, EventArgs e)
         {
             Kullanici kullanici = new Kullanici();
-            if ((txtUyeEmail.Text == UyeMail) && (txtUyeParola.Text == UyeParola))
-            {
-                MessageBox.Show("girişiniz başarılı!");
-                kullanici.Show();
-            }
-            else
-            {
-                MessageBox.Show("lütfen tekrar deneyiniz!");
-            }
+            con.Open();
+                string query = "SELECT COUNT(*) FROM musteri WHERE Musteri_Email=@email AND Musteri_parola=@parola";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@email", txtUyeEmail.Text);
+                    cmd.Parameters.AddWithValue("@parola", txtUyeParola.Text);
+
+                    int userExists = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    if (userExists > 0)
+                    {
+                        MessageBox.Show("Giriş başarılı!");
+                    this.Hide();    
+                    kullanici.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lütfen tekrar deneyiniz.");
+                    }
+                }
         }
 
         private void btnKaydol_Click(object sender, EventArgs e)
@@ -108,7 +123,7 @@ namespace İmdi_kargo
 
         private void btnUyeKaydol_Click(object sender, EventArgs e)
         {
-            
+              Uye_No = rnd.Next(1, 100);
             if (txtKayıtEmail.Text != "" && txtAdSoyad.Text != "" && txtTcNo.Text != "" && txtDogumYili1.Text !="" && txtKayıtParola.Text != "" && txtKayıtParolaTekrar.Text != "")
             {
                 if (txtKayıtParola.Text == txtKayıtParolaTekrar.Text && (txtTcNo.TextLength == 11))
@@ -121,18 +136,18 @@ namespace İmdi_kargo
                             string query = "INSERT INTO musteri (Musteri_No,Musteri_AdSoyad, Musteri_Email, Musteri_TC, Musteri_DogumYili, Musteri_Parola) VALUES (@MusteriNo, @adSoyad, @Email, @TC, @DogumYili, @Parola)";
                             using (MySqlCommand cmd = new MySqlCommand(query, con))
                             {
-                                cmd.Parameters.AddWithValue("@MusteriNo",61);
+                                cmd.Parameters.AddWithValue("@MusteriNo",Uye_No);
                                 cmd.Parameters.AddWithValue("@adSoyad", txtAdSoyad.Text);
                                 cmd.Parameters.AddWithValue("@Email", txtKayıtEmail.Text);
                                 cmd.Parameters.AddWithValue("@TC", txtTcNo.Text);
                                 cmd.Parameters.AddWithValue("@DogumYili", txtDogumYili1.Text);
                                 cmd.Parameters.AddWithValue("@Parola", txtKayıtParola.Text);
 
-                                int rowsAffected = cmd.ExecuteNonQuery();
+                                int row = cmd.ExecuteNonQuery();
 
-                                if (rowsAffected > 0)
+                                if (row > 0)
                                 {
-                                    MessageBox.Show("Kayıt başarılı!");
+                                    MessageBox.Show("Kayıt başarılı!"+"\nMüşteri Numaranız: "+Uye_No+"lütfen kaybetmeyiniz!");
                                 }
                                 else
                                 {
@@ -244,10 +259,10 @@ namespace İmdi_kargo
                 {
                     cmd.Parameters.AddWithValue("@TakipNo", takipNo);
 
-                    using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+                    using (MySqlDataAdapter adaptor = new MySqlDataAdapter(cmd))
                     {
                         DataTable dt = new DataTable();
-                        da.Fill(dt);
+                        adaptor.Fill(dt);
                         dbGonderiSorgu.DataSource = dt;
                     }
                 }

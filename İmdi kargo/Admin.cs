@@ -54,21 +54,22 @@ namespace İmdi_kargo
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            if (cbKargoNo.SelectedItem == "" || cbKargoDurum.SelectedItem == null)
+            if (cbKargoNo.SelectedItem == "" || cbKargoDurum.SelectedItem == null||mbtKargoTeslimTarih.Text =="")
             {
                 MessageBox.Show("Lütfen tekrar deneyin");
                 return;
             }
             string takipNo = cbKargoNo.Text;
             string yeniDurum = cbKargoDurum.SelectedItem.ToString();
+            string TeslimTarih=mbtKargoTeslimTarih.Text;
             using (MySqlConnection con = new MySqlConnection("server=localhost;Database=imdikargo;Uid=root;pwd=YPpDy2np"))
             {
                 con.Open();
-                string query = "UPDATE kargo SET Kargo_durum = @Durum WHERE Takip_no = @TakipNo";
-
+                string query = "UPDATE kargo SET kargo_teslim_tarih = @Tarih, Kargo_durum = @Durum WHERE Takip_no = @TakipNo";
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@Durum", yeniDurum);
+                    cmd.Parameters.AddWithValue("@Tarih", TeslimTarih);
                     cmd.Parameters.AddWithValue("@TakipNo", takipNo);
 
                     int rowsAffected = cmd.ExecuteNonQuery();
